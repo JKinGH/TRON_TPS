@@ -13,7 +13,7 @@
 [官方HTTP API](https://github.com/tronprotocol/documentation/blob/master/TRX_CN/Tron-http.md)
 
 ## 测试环境
-![](./private_net/image/environment.png)
+![](https://github.com/JKinGH/TRON_TPS/blob/master/image/environment.png)
 
 ## 测试步骤
 ### 1.通过构造转账交易
