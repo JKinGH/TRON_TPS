@@ -33,7 +33,7 @@ TRON波场采用DPOS共识机制，27个超级节点，3秒出一个块（1/3 BP
 ## 测试结果
 ### 1.经测试，当存在一个 `supernode`和一个`fullnode`时TPS测试结果最佳
 ### 2.测试结果数据
-#### 测试程序运行3-5mins 后log记录如下，可见TPS在稳定在400左右，计算出平均值为
+#### 测试程序运行20 mins后log记录如下，可见TPS在稳定在450左右，计算出平均值为441
 ```
  GetTransactionCountByBlocknum ,height=5356, in range[1000~2000],contain transaction num= 1152 ,TPS=384 
  GetTransactionCountByBlocknum ,height=5357, in range[1000~2000],contain transaction num= 1535 ,TPS=511 
@@ -415,7 +415,7 @@ TRON波场采用DPOS共识机制，27个超级节点，3秒出一个块（1/3 BP
  GetTransactionCountByBlocknum ,height=7279, in range[    >2000],contain transaction num= 2045 ,TPS=681 
  GetTransactionCountByBlocknum ,height=7281, in range[1000~2000],contain transaction num= 1094 ,TPS=364 
 ```
-#### 筛选出700左右的TPS（峰值）
+#### 筛选出700左右的TPS,平均值=694（峰值）
 ```
  GetTransactionCountByBlocknum ,height=5635, in range[    >2000],contain transaction num= 2115 ,TPS=705 
  GetTransactionCountByBlocknum ,height=7082, in range[    >2000],contain transaction num= 2188 ,TPS=729 
