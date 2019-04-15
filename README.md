@@ -20,8 +20,9 @@ TRON波场采用DPOS共识机制，27个超级节点，3秒出一个块（1/3 BP
 
 ---
 ## 测试步骤
-### 1.通过HTTP接口构造转账交易
-### 2.多线程模拟多用户调用
+### 1.通过HTTP接口`easytransferbyprivate`构造转账交易
+### 2.多线程脚本模拟多用户调用
+### 3.通过HTTP接口`gettransactioncountbyblocknum`扫描每个测试区块中包含的交易笔数
 
 ---
 ## 注意事项
@@ -31,23 +32,9 @@ TRON波场采用DPOS共识机制，27个超级节点，3秒出一个块（1/3 BP
 ---
 ## 测试结果
 ### 1.经测试，当存在一个 `supernode`和一个`fullnode`时TPS测试结果最佳
-### 2.如下展示几组TPS在700左右的数据
-#### 700左右的TPS
+### 2.测试结果数据
+#### 测试程序运行3-5mins 后log记录如下，可见TPS在稳定在400左右，计算出平均值为
 ```
- GetTransactionCountByBlocknum ,height=5635, in range[    >2000],contain transaction num= 2115 ,TPS=705 
- GetTransactionCountByBlocknum ,height=7082, in range[    >2000],contain transaction num= 2188 ,TPS=729 
- GetTransactionCountByBlocknum ,height=7152, in range[    >2000],contain transaction num= 2013 ,TPS=671 
- GetTransactionCountByBlocknum ,height=7165, in range[    >2000],contain transaction num= 2082 ,TPS=694 
- GetTransactionCountByBlocknum ,height=7174, in range[    >2000],contain transaction num= 2104 ,TPS=701 
- GetTransactionCountByBlocknum ,height=7208, in range[    >2000],contain transaction num= 2086 ,TPS=695 
- GetTransactionCountByBlocknum ,height=7253, in range[    >2000],contain transaction num= 2054 ,TPS=684 
- GetTransactionCountByBlocknum ,height=7265, in range[    >2000],contain transaction num= 2071 ,TPS=690 
- GetTransactionCountByBlocknum ,height=7279, in range[    >2000],contain transaction num= 2045 ,TPS=681 
-```
-
-#### 1000-2000笔交易每块的记录
-```
-GetTransactionCountByBlocknum ,height=5355, in range[1000~2000],contain transaction num= 1901 ,TPS=633 
  GetTransactionCountByBlocknum ,height=5356, in range[1000~2000],contain transaction num= 1152 ,TPS=384 
  GetTransactionCountByBlocknum ,height=5357, in range[1000~2000],contain transaction num= 1535 ,TPS=511 
  GetTransactionCountByBlocknum ,height=5358, in range[1000~2000],contain transaction num= 1371 ,TPS=457 
@@ -427,17 +414,18 @@ GetTransactionCountByBlocknum ,height=5355, in range[1000~2000],contain transact
  GetTransactionCountByBlocknum ,height=7275, in range[1000~2000],contain transaction num= 1132 ,TPS=377 
  GetTransactionCountByBlocknum ,height=7279, in range[    >2000],contain transaction num= 2045 ,TPS=681 
  GetTransactionCountByBlocknum ,height=7281, in range[1000~2000],contain transaction num= 1094 ,TPS=364 
- GetTransactionCountByBlocknum ,height=8674, in range[1000~2000],contain transaction num= 1132 ,TPS=377 
- GetTransactionCountByBlocknum ,height=8676, in range[1000~2000],contain transaction num= 1179 ,TPS=393 
- GetTransactionCountByBlocknum ,height=8677, in range[1000~2000],contain transaction num= 1246 ,TPS=415 
- GetTransactionCountByBlocknum ,height=8678, in range[1000~2000],contain transaction num= 1298 ,TPS=432 
- GetTransactionCountByBlocknum ,height=8679, in range[1000~2000],contain transaction num= 1149 ,TPS=383 
- GetTransactionCountByBlocknum ,height=8680, in range[1000~2000],contain transaction num= 1340 ,TPS=446 
- GetTransactionCountByBlocknum ,height=8681, in range[1000~2000],contain transaction num= 1146 ,TPS=382 
- GetTransactionCountByBlocknum ,height=8682, in range[1000~2000],contain transaction num= 1327 ,TPS=442 
- GetTransactionCountByBlocknum ,height=8684, in range[1000~2000],contain transaction num= 1665 ,TPS=555 
- GetTransactionCountByBlocknum ,height=8690, in range[1000~2000],contain transaction num= 1127 ,TPS=375 
- GetTransactionCountByBlocknum ,height=8692, in range[1000~2000],contain transaction num= 1854 ,TPS=618 
+```
+#### 筛选出700左右的TPS（峰值）
+```
+ GetTransactionCountByBlocknum ,height=5635, in range[    >2000],contain transaction num= 2115 ,TPS=705 
+ GetTransactionCountByBlocknum ,height=7082, in range[    >2000],contain transaction num= 2188 ,TPS=729 
+ GetTransactionCountByBlocknum ,height=7152, in range[    >2000],contain transaction num= 2013 ,TPS=671 
+ GetTransactionCountByBlocknum ,height=7165, in range[    >2000],contain transaction num= 2082 ,TPS=694 
+ GetTransactionCountByBlocknum ,height=7174, in range[    >2000],contain transaction num= 2104 ,TPS=701 
+ GetTransactionCountByBlocknum ,height=7208, in range[    >2000],contain transaction num= 2086 ,TPS=695 
+ GetTransactionCountByBlocknum ,height=7253, in range[    >2000],contain transaction num= 2054 ,TPS=684 
+ GetTransactionCountByBlocknum ,height=7265, in range[    >2000],contain transaction num= 2071 ,TPS=690 
+ GetTransactionCountByBlocknum ,height=7279, in range[    >2000],contain transaction num= 2045 ,TPS=681 
 ```
 
 
